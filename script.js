@@ -202,7 +202,7 @@ function openPartnerPopup() {
   
     const form = e.target;
     const data = new FormData(form);
-    const actionURL = "https://formsubmit.co/mehrab.amouei@example.com"; // ایمیل خودت رو وارد کن
+    const actionURL = "https://formsubmit.co/mehrab.amouei@gmail.com"; // ایمیل خودت رو وارد کن
   
     fetch(actionURL, {
       method: "POST",
