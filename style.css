@@ -1,0 +1,920 @@
+/* فونت فارسی (از CDN مثلاً fontiran یا دیفالت) */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+/* تنظیمات پایه */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  line-height: 1.7;
+  background-color: #f9f9f9;
+  color: #333;
+  direction: rtl;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* هدر سایت */
+.site-header {
+  background-color: #0077cc;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-header .tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* هیرو سکشن */
+.hero {
+  background: linear-gradient(to left, #ff9900, #ffcc66);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #005fa3;
+}
+
+/* بخش مأموریت */
+.mission {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.mission h3 {
+  color: #ff6600;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* برنامه‌ها */
+.programs {
+  background-color: #eef5ff;
+  padding: 3rem 1rem;
+}
+
+.programs h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #0077cc;
+}
+
+.program-list {
+  list-style: none;
+  text-align: center;
+}
+
+.program-list li {
+  margin: 0.75rem 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* مسابقات */
+.competitions {
+  background-color: #fff8e1;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.competitions h3 {
+  color: #e69100;
+  margin-bottom: 1rem;
+}
+
+/* شرکای ما */
+.partners {
+  background-color: #f0f0f0;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.partners .btn-secondary {
+  background-color: #ff9900;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.partners .btn-secondary:hover {
+  background-color: #cc7a00;
+}
+
+/* موفقیت‌ها */
+.testimonials {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.testimonials h3 {
+  color: #0077cc;
+  margin-bottom: 1rem;
+}
+
+/* فوتر */
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #ffcc66;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* واکنش‌گرایی */
+@media (min-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .program-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .program-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.newsletter-popup {
+    position: fixed;
+    bottom: -100%;
+    right: 10px;
+    width: 300px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+  
+  .newsletter-popup.show {
+    bottom: 20px;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup-content h4 {
+    color: #0077cc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .popup-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .popup-content button {
+    background-color: #ff9900;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #cc7a00;
+  }
+  
+  .close-btn {
+    float: left;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .program-card {
+    background-color: white;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 119, 204, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 119, 204, 0.2);
+  }
+  
+  .program-card h4 {
+    font-size: 1.4rem;
+    color: #0077cc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .program-card p {
+    margin-bottom: 0.75rem;
+    color: #444;
+  }
+  
+  .program-card ul {
+    list-style-type: '✅ ';
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .program-card li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  
+  .programs-highlight {
+    background: #f7f9fc;
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filters {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    background: #eee;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #0077cc;
+    color: white;
+  }
+  
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .program-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 119, 204, 0.1);
+    text-align: center;
+    transition: 0.3s ease;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 119, 204, 0.2);
+  }
+  
+  .program-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .program-card h4 {
+    color: #0077cc;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .program-card ul {
+    text-align: right;
+    padding-right: 1.2rem;
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  
+  .program-card ul li::before {
+    content: "✅ ";
+    color: #28a745;
+  }
+  
+  .btn-secondary {
+    background: #ff9900;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background: #cc7a00;
+  }
+
+  
+  /* کهکشان و پس‌زمینه */
+.galaxy {
+    background: radial-gradient(circle at center, #0a0a1f 20%, #000 100%);
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .galaxy-bg::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://i.ibb.co/6Z3LRBh/stars-bg.png') repeat;
+    animation: starsMove 100s linear infinite;
+    opacity: 0.2;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+  }
+  
+  @keyframes starsMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+  }
+  
+  /* عنوان */
+  .galaxy-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* مدار سیارات */
+  .planet-orbit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* سیارات */
+  .planet {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, #444, #111);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px #00f8ff44;
+  }
+  
+  .planet:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .planet-icon {
+    font-size: 2.8rem;
+    margin-top: 35px;
+  }
+  
+  /* رینگ‌های مداری */
+  .orbit-ring {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    animation: orbit 20s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .ring-blue { border-color: #00c3ff44; }
+  .ring-orange { border-color: #ffb34744; }
+  .ring-green { border-color: #33ff8844; }
+  .ring-purple { border-color: #bb33ff44; }
+  .ring-red { border-color: #ff444444; }
+  .ring-cyan { border-color: #33ffff44; }
+  
+  /* اطلاعات سیاره */
+  .planet-info {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 20, 40, 0.9);
+    border: 2px solid #00f8ff66;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 500px;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 0 25px #00f8ff33;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  
+  .planet-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00f8ff;
+  }
+  
+  .planet-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  /* دکمه ثبت‌نام */
+  .btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #00f8ff, #00c3ff);
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 20px #00f8ff77;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+  
+  .btn-cta:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #00c3ff, #00f8ff);
+    box-shadow: 0 0 25px #00f8ff;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 10px #00f8ff77; }
+    50% { box-shadow: 0 0 25px #00f8ffcc; }
+    100% { box-shadow: 0 0 10px #00f8ff77; }
+  }
+  
+  /* ریسپانسیو */
+  @media screen and (max-width: 768px) {
+    .planet-orbit {
+      gap: 30px;
+    }
+  
+    .planet {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .orbit-ring {
+      width: 130px;
+      height: 130px;
+    }
+  
+    .planet-icon {
+      font-size: 2rem;
+      margin-top: 30px;
+    }
+  }
+  
+  /* === بخش برنامه‌های آینده‌نگر === */
+
+#programs-neo {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom right, #eef2f3, #dbe9f4);
+    text-align: center;
+  }
+  
+  #programs-neo .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .neo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .neo-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem;
+    text-align: right;
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .neo-card .neo-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .neo-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #0e3c66;
+  }
+  
+  .neo-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .neo-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .neo-card ul li {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    padding-right: 1.2rem;
+    position: relative;
+  }
+  
+  .neo-card ul li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #1a73e8;
+    font-size: 0.9rem;
+  }
+  
+  .btn-glow {
+    background: linear-gradient(to left, #1a73e8, #4fc3f7);
+    padding: 0.6rem 1.2rem;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
+  }
+  
+  .btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+  }
+  
+  .neo-card::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 70%);
+    animation: pulse 4s infinite ease-in-out;
+    z-index: 0;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.1;
+    }
+  }
+  
+  /* افکت نمایش کارت‌ها به ترتیب */
+  .neo-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* تاخیرهای متفاوت برای کارت‌ها */
+  .delay-1 { transition-delay: 0.2s; }
+  .delay-2 { transition-delay: 0.4s; }
+  .delay-3 { transition-delay: 0.6s; }
+  .delay-4 { transition-delay: 0.8s; }
+  .delay-5 { transition-delay: 1s; }
+  .delay-6 { transition-delay: 1.2s; }
+  .delay-7 { transition-delay: 1.4s; }
+  
+  /* ریسپانسیو */
+  @media (max-width: 768px) {
+    .neo-card {
+      text-align: center;
+    }
+    .neo-card ul li {
+      padding-right: 0;
+    }
+  }
+
+  .lottery-section {
+    background: linear-gradient(135deg, #fef9f7, #f2f9ff);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 2rem;
+    margin: 4rem auto;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+  
+  .lottery-form input[type="tel"] {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .lottery-form button {
+    padding: 1rem 2rem;
+    background: #ff7100;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .lottery-form button:hover {
+    background: #e75e00;
+  }
+
+  /* Toggle Button */
+.chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #ff7300;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+  }
+  .chatbot-toggle:hover {
+    background: #e45e00;
+  }
+  
+  /* Chatbox */
+  .chatbot-box {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    font-family: "Vazirmatn", sans-serif;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .chatbot-header {
+    background: #ff7300;
+    color: white;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chatbot-body {
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .chatbot-message {
+    background: #f1f1f1;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+    font-size: 0.9rem;
+  }
+  
+  .chatbot-message.bot {
+    background: #e6f3ff;
+    align-self: flex-start;
+  }
+  
+  .chatbot-message.user {
+    background: #d1ffe6;
+    align-self: flex-end;
+  }
+  
+  .chatbot-input-area {
+    display: flex;
+    padding: 0.5rem;
+    border-top: 1px solid #eee;
+  }
+  
+  #chatbot-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+  }
+  
+  #chatbot-send {
+    background: #00c48c;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  
+
+
+  .testimonial-highlight {
+    background: linear-gradient(135deg, #f0f8ff, #ffffff);
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    margin: 4rem auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    animation: fadeInUp 1s ease-in-out both;
+  }
+  
+  .testimonial-highlight .section-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .testimonial-text {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 2;
+    text-align: justify;
+    font-family: "Vazirmatn", sans-serif;
+  }
+
+  
+/* دکمه همکاری */
+.btn-partner {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-partner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  /* پاپ‌آپ فرم همکاری */
+  .partner-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeInUp 0.5s ease-in-out;
+  }
+  
+  .popup-content h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  .popup-content input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid #ccc;
+    font-family: "Vazirmatn", sans-serif;
+  }
+  
+  .popup-content button {
+    width: 100%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }
+    
