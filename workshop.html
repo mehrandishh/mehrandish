@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>کارگاه رنگین کمان</title>
+    <link rel="stylesheet" href="style.css"> <!-- استایل اصلی -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" /> <!-- AOS برای موشن -->
+    <style>
+        .workshop-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f4f6fd, #ffffff);
+            text-align: center;
+          }
+          
+          .section-title {
+            font-size: 42px;
+            color: #6a1b9a;
+            font-weight: bold;
+            margin-bottom: 60px;
+          }
+          
+          .workshop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+          }
+          
+          .neo-card {
+            background: #ffffff;
+            border-radius: 30px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px 20px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+          }
+          
+          .neo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+          }
+          
+          .teacher-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px auto;
+          }
+          
+          .teacher-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          
+          .neo-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+          }
+          
+          .neo-card h4 {
+            color: #512da8;
+            font-size: 26px;
+            margin-bottom: 10px;
+          }
+          
+          .neo-card p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+            min-height: 60px;
+          }
+          
+          .neo-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+          }
+          
+          .neo-card ul li {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #444;
+            position: relative;
+            padding-right: 25px;
+          }
+          
+          .neo-card ul li::before {
+            content: "✔️";
+            position: absolute;
+            right: 0;
+          }
+          
+          
+    </style>
+</head>
+
+<body>
+
+    <!-- Header کپی از index -->
+  <!-- هدر -->
+  <header class="site-header">
+    <div class="container">      
+        <img style="width: 10%; height:10%" src="logo.png" alt="لوگوی موسسه مهراندیش">
+        <h1>مؤسسه آموزشی مهراندیش</h1>  
+      <p class="tagline">پیشرو در آموزش نوآورانه و رشد چندبعدی کودکان</p>
+    </div>
+  </header>
+
+    <!-- Main Content -->
+    <main>      
+        <section class="workshop-section">
+            <h2 class="section-title" data-aos="fade-down">کارگاه رنگین کمان</h2>
+            <div class="workshop-grid">
+          
+              <!-- 1. فن بیان -->
+              <div class="neo-card delay-1" data-aos="fade-up">
+                <div class="teacher-photo">
+                  <img src="sun.png" alt="استاد فن بیان">
+                </div>
+                <h4>فن بیان</h4>
+                <p>با اعتماد به نفس صحبت کن و در جمع بدرخش!</p>
+                <ul>
+                  <li>تقویت مهارت‌های گفتاری</li>
+                  <li>ایجاد اعتماد به نفس در بیان</li>
+                  <li>ارتباط موثر در جمع</li>
+                </ul>
+              </div>
+          
+              <!-- 2. برنامه نویسی -->
+              <div class="neo-card delay-2" data-aos="fade-up">
+                <div class="teacher-photo">
+                  <img src="me.png" alt="استاد برنامه نویسی">
+                </div>
+                <h4>برنامه نویسی</h4>
+                <p>با پروژه‌های جذاب وارد دنیای کدنویسی شو!</p>
+                <ul>
+                  <li>مفاهیم اولیه برنامه‌نویسی</li>
+                  <li>ساخت بازی‌های کودکانه</li>
+                  <li>تفکر منطقی و الگوریتمی</li>
+                </ul>
+              </div>
+          
+              <!-- 3. قصه‌گویی -->
+              <div class="neo-card delay-3" data-aos="fade-up" >
+                <div class="teacher-photo">
+                  <img src="sun.png" alt="استاد قصه گویی">
+                </div>
+                <h4>قصه‌گویی</h4>
+                <p>با روایت داستان‌های جذاب خلاقیتت رو شکوفا کن!</p>
+                <ul>
+                  <li>خلق و بیان داستان</li>
+                  <li>تقویت تخیل و ابتکار</li>
+                  <li>بیان احساسی و جذاب</li>
+                </ul>
+              </div>
+
+
+
+
+
+              <!-- 4. مهارت‌های یادگیری -->
+              <div class="neo-card delay-4" data-aos="fade-up"  style="display: inline-block; margin-left: 50%;">
+                <div class="teacher-photo">
+                  <img src="sani.png" alt="استاد مهارت‌های یادگیری">
+                </div>
+                <h4>مهارت‌های یادگیری</h4>
+                <p>یاد بگیر چطور بهتر، سریع‌تر و هوشمندانه‌تر یاد بگیری!</p>
+                <ul>
+                  <li>مدیریت زمان و تمرکز</li>
+                  <li>یادگیری موثر و عمیق</li>
+                  <li>استفاده از تکنیک‌های حافظه</li>
+                </ul>
+              </div>
+          
+              <!-- 5. تحقیقات علمی -->
+              <div class="neo-card delay-5" data-aos="fade-up"  style="display: inline-block; margin-left: 50%;">
+                <div class="teacher-photo">
+                  <img src="dost.png" alt="استاد تحقیقات علمی">
+                </div>
+                <h4>تحقیقات علمی</h4>
+                <p>با آزمایش‌ها و پروژه‌های علمی دنیای علم را کشف کن!</p>
+                <ul>
+                  <li>انجام پروژه‌های علمی</li>
+                  <li>پرورش کنجکاوی و تحقیق</li>
+                  <li>تفکر تحلیلی و علمی</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          
+          
+          
+      </main>
+      
+      
+
+  <!-- فوتر -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <p>آدرس: رشت، گلسار، خیابان ۸۷</p>
+      <p>تلفن: 09116008097</p>
+      <p>ما را در شبکه‌های اجتماعی دنبال کنید.</p>
+      <ul class="footer-links">
+        <li><a href="#programs-neo">برنامه‌ها</a></li>
+        <li><a href="#contact">تماس با ما</a></li>
+        <li><a href="https://www.instagram.com/mehrandishcomplex?igsh=MnhtaDZrYWZueDVi">اینستاگرام</a></li>
+      </ul>
+      <p class="copyright">© made it by Mehrab Amouei 2025</p>
+    </div>
+  </footer>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+</body>
+</html>
