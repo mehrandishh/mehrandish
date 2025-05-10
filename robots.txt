@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mehrandishh.github.io/mehrandish/
+Sitemap: https://mehrandishh.github.io/sitemap.xml
