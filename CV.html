@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقویم تبلیغات موسسه مهراندیش</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #4a6baf;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #3a5683;
+            border-bottom: 2px solid #e1e5eb;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        .tree {
+            margin-left: 20px;
+        }
+        .tree ul {
+            list-style-type: none;
+            padding-right: 20px;
+            position: relative;
+        }
+        .tree ul ul {
+            padding-right: 30px;
+        }
+        .tree li {
+            padding: 10px 5px 0 5px;
+            position: relative;
+        }
+        .tree li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -20px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0 0 0 0;
+            width: 20px;
+            height: 100%;
+        }
+        .tree li::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 0 0;
+            width: 20px;
+            height: 100%;
+        }
+        .tree li:last-child::after {
+            display: none;
+        }
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+        .tree li:only-child {
+            padding-top: 0;
+        }
+        .tree li div {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .tree li div:hover {
+            background-color: #e9ecef;
+            transform: translateX(-5px);
+        }
+        .platform {
+            background-color: #e3f2fd !important;
+            border-color: #bbdefb !important;
+            font-weight: bold;
+        }
+        .frequency {
+            background-color: #fff8e1 !important;
+            border-color: #ffecb3 !important;
+        }
+        .content {
+            background-color: #e8f5e9 !important;
+            border-color: #c8e6c9 !important;
+        }
+        .time {
+            background-color: #f3e5f5 !important;
+            border-color: #e1bee7 !important;
+        }
+        .target {
+            background-color: #ffebee !important;
+            border-color: #ffcdd2 !important;
+        }
+        .toggle-btn {
+            background-color: #4a6baf;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .toggle-btn:hover {
+            background-color: #3a5683;
+        }
+        .hidden {
+            display: none;
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-left: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تقویم تبلیغات موسسه آموزشی مهراندیش</h1>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e3f2fd; border-color: #bbdefb;"></div>
+                <span>پلتفرم/کانال</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #fff8e1; border-color: #ffecb3;"></div>
+                <span>فرکانس</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e8f5e9; border-color: #c8e6c9;"></div>
+                <span>محتوای تبلیغاتی</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f3e5f5; border-color: #e1bee7;"></div>
+                <span>زمانبندی</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ffebee; border-color: #ffcdd2;"></div>
+                <span>گروه هدف</span>
+            </div>
+        </div>
+        
+        <button class="toggle-btn" onclick="toggleAll()">نمایش/پنهان کردن همه</button>
+        
+        <h2>تبلیغات دیجیتال</h2>
+        <div class="tree">
+            <ul>
+                <li>
+                    <div class="platform">اینستاگرام</div>
+                    <ul>
+                        <li>
+                            <div class="frequency">فعالیت روزانه</div>
+                            <ul>
+                                <li><div class="content">3 تا 4 استوری</div></li>
+                                <li><div class="time">ساعت 12 الی 18</div></li>
+                                <li>
+                                    <div class="content">محتوای استوری‌ها</div>
+                                    <ul>
+                                        <li><div>معرفی کلاس‌ها</div></li>
+                                        <li><div>رویدادهای هفته</div></li>
+                                        <li><div>توضیح کارگاه‌ها</div></li>
+                                        <li><div>نظرسنجی اولیا</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="frequency">فعالیت هفتگی</div>
+                            <ul>
+                                <li><div class="content">1 پست + 3 ریلز</div></li>
+                                <li><div class="time">روزهای زوج ساعت 18 تا 22</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="content">همکاری با بلاگرها</div>
+                            <ul>
+                                <li>
+                                    <div>2 ماه اول</div>
+                                    <ul>
+                                        <li><div>1 بلاگر هفتگی (حضوری)</div></li>
+                                        <li><div>1 بلاگر استوری در پیج (هر دو ماه)</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div>بعد از 2 ماه</div>
+                                    <ul>
+                                        <li><div>1 بلاگر حضوری هفتگی</div></li>
+                                        <li><div>2 بلاگر غیرحضوری</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">واتساپ</div>
+                    <ul>
+                        <li>
+                            <div class="frequency">روزانه</div>
+                            <ul>
+                                <li><div class="content">پیام متنی و پوستر برای اطلاع‌رسانی رویدادها</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="frequency">هفتگی</div>
+                            <ul>
+                                <li><div class="content">کلیپ انگیزشی</div></li>
+                                <li><div class="time">چهارشنبه ساعت 17</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="content">واتساپ مارکتینگ</div>
+                            <ul>
+                                <li><div>تبلیغ برنامه‌ها و رویدادها متناسب با زمان اجرا</div></li>
+                                <li><div>کلیپ حال خوب (هفته‌ای یکبار)</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">تلگرام</div>
+                    <ul>
+                        <li><div class="frequency">3 روز در هفته (شنبه، سه‌شنبه، چهارشنبه)</div></li>
+                        <li>
+                            <div class="content">محتوای منتشر شده</div>
+                            <ul>
+                                <li><div>پوستر و اطلاعیه کلاس‌ها</div></li>
+                                <li><div>عکس و فیلم از کلاس‌ها</div></li>
+                                <li><div>مسابقات</div></li>
+                                <li><div>کلیپ‌های انگیزشی</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">پیام‌رسان‌های داخلی (بله، روبیکا، ایتا)</div>
+                    <ul>
+                        <li>
+                            <div class="frequency">روزانه</div>
+                            <ul>
+                                <li><div class="content">استوری (در بله و روبیکا)</div></li>
+                                <li><div>رویدادها</div></li>
+                                <li><div>پوستر</div></li>
+                                <li><div>متن‌های مربوطه</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="frequency">هفتگی</div>
+                            <ul>
+                                <li><div>تمام رویدادهای مهراندیش در کانال‌ها</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">دیوار و شیپور</div>
+                    <ul>
+                        <li><div class="frequency">هفتگی (هر یک روز در میان نردبان شود)</div></li>
+                        <li><div class="content">انتشار کلاس‌ها و رویدادها</div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h2>تبلیغات محیطی</h2>
+        <div class="tree">
+            <ul>
+                <li>
+                    <div class="platform">تلویزیون شهری</div>
+                    <ul>
+                        <li><div class="frequency">روزانه</div></li>
+                        <li><div class="time">ساعت 9 صبح تا 8 شب</div></li>
+                        <li><div class="content">نمایش اطلاعات کلاس‌ها</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">تلویزیون داخل فضای آموزشی</div>
+                    <ul>
+                        <li><div class="frequency">روزانه</div></li>
+                        <li><div class="content">نمایش اطلاعات کلاس‌ها، فیلم و عکس (کلیپ‌های تفکیک شده)</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">تراکت</div>
+                    <ul>
+                        <li><div class="frequency">3 روز در هفته</div></li>
+                        <li>
+                            <div class="target">مناطق توزیع: صیقلان تا گلسار (خیابان‌ها و مکان‌های پرتردد)</div>
+                            <ul>
+                                <li><div>باشگاه‌های ورزشی</div></li>
+                                <li><div>آموزشگاه‌های غیرمرتبط</div></li>
+                                <li><div>مراکز تفریحی</div></li>
+                                <li><div>فروشگاه‌ها</div></li>
+                                <li><div>پارک‌ها</div></li>
+                                <li><div>پیاده‌راه شهرداری</div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="time">زمان توزیع</div>
+                            <ul>
+                                <li><div>بهار و تابستان: صبح 10-13، عصر 17-21</div></li>
+                                <li><div>پاییز و زمستان: صبح 10-13، عصر 16-20</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">پوستر A3</div>
+                    <ul>
+                        <li><div class="target">مکان‌های نصب: مسیر خیابان نواب، 4راه گلسار تا صابرین</div></li>
+                        <li>
+                            <div>نقاط نصب:</div>
+                            <ul>
+                                <li><div>روی دیوارها</div></li>
+                                <li><div>نانوایی‌ها</div></li>
+                                <li><div>مغازه‌های نزدیک مدارس</div></li>
+                                <li><div>فروشگاه لوازم التحریر</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">توزیع ساک تبلیغاتی</div>
+                    <ul>
+                        <li>
+                            <div class="target">مراکز توزیع:</div>
+                            <ul>
+                                <li><div>سوپرمارکت‌ها</div></li>
+                                <li><div>داروخانه‌ها</div></li>
+                                <li><div>فروشگاه اسباب‌بازی</div></li>
+                                <li><div>لوازم التحریر</div></li>
+                            </ul>
+                        </li>
+                        <li><div class="content">تراکت‌ها داخل ساک‌ها قرار داده می‌شود</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">توزیع تراکت در مدارس</div>
+                    <ul>
+                        <li><div class="target">جلوی مدارس ابتدایی و متوسطه اول</div></li>
+                        <li>
+                            <div class="time">زمان توزیع:</div>
+                            <ul>
+                                <li><div>فروردین و اردیبهشت ساعت 12 هنگام تحویل کارنامه</div></li>
+                                <li><div>اواخر اردیبهشت و خرداد (توسط مدرسه)</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h2>شرکت در رویدادها</h2>
+        <div class="tree">
+            <ul>
+                <li><div>نمایشگاه اول مهر</div></li>
+                <li><div>روبومهر (اردیبهشت - آبان)</div></li>
+                <li><div>الکامپ (دی‌ماه)</div></li>
+                <li><div>لیگ مدرسه مهراندیش</div>
+                    <ul>
+                        <li><div>لیگ زمستان</div></li>
+                        <li><div>لیگ بهار</div></li>
+                        <li><div>لیگ تابستان</div></li>
+                    </ul>
+                </li>
+                <li><div>بازارچه دستاوردهای دانش‌آموزی (اردیبهشت)</div></li>
+            </ul>
+        </div>
+        
+        <h2>همکاری با مراکز آموزشی</h2>
+        <div class="tree">
+            <ul>
+                <li>
+                    <div>برگزاری کلاس‌های رباتیک تحت عنوان کلاس فوق‌برنامه</div>
+                    <ul>
+                        <li><div>فصل‌ها: بهار، تابستان، پاییز، زمستان</div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h2>تبلیغات پیامکی</h2>
+        <div class="tree">
+            <ul>
+                <li>
+                    <div class="platform">پیامک تکی</div>
+                    <ul>
+                        <li><div class="target">جامعه هدف</div></li>
+                        <li><div class="frequency">هر روز یا یک روز در میان (روزهای فرد)</div></li>
+                        <li><div class="time">صبح تا عصر</div></li>
+                        <li><div class="content">از طریق پنل دایرکت</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">پیامک شخصی‌سازی شده</div>
+                    <ul>
+                        <li><div class="frequency">هفتگی</div></li>
+                        <li><div class="content">از طریق پنل دایرکت</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">پیامک منطقه‌ای</div>
+                    <ul>
+                        <li><div class="target">مناطق گلسار و اطراف</div></li>
+                        <li><div class="frequency">ماهانه</div></li>
+                        <li><div class="content">از طریق پنل دایرکت</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">پیامک LBS</div>
+                    <ul>
+                        <li><div class="target">مخاطبان ساکن و رهگذر اطراف موسسه</div></li>
+                        <li><div class="frequency">هفته‌ای یکبار</div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h2>تبلیغات سازمانی و نهادی</h2>
+        <div class="tree">
+            <ul>
+                <li>
+                    <div class="platform">ادارات و سازمان‌ها</div>
+                    <ul>
+                        <li><div>اعمال تخفیف برای برگزاری کلاس‌ها</div></li>
+                        <li>
+                            <div class="time">زمان‌بندی:</div>
+                            <ul>
+                                <li><div>نوبت دوم سال: بهار (خرداد) و پاییز (آذر)</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">مدارس</div>
+                    <ul>
+                        <li><div>صحبت با مدیران برای برگزاری کلاس‌ها در مرکز یا موسسه</div></li>
+                        <li>
+                            <div class="time">زمان‌بندی:</div>
+                            <ul>
+                                <li><div>بهار (اردیبهشت)</div></li>
+                                <li><div>تابستان (مرداد)</div></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">مهدکودک‌ها</div>
+                    <ul>
+                        <li><div>صحبت با مدیران برای برگزاری کلاس‌ها</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="platform">کانون‌های فرهنگی (مثل کانون حضرت زینب)</div>
+                    <ul>
+                        <li><div class="time">بهار (خرداد)</div></li>
+                        <li><div>ارائه کلاس‌ها با قیمت ویژه</div></li>
+                        <li><div>نصب بنر در سر در کانون‌ها</div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.tree li');
+            
+            items.forEach(item => {
+                const div = item.querySelector('div');
+                if (item.querySelector('ul')) {
+                    div.style.cursor = 'pointer';
+                    div.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const ul = item.querySelector('ul');
+                        ul.classList.toggle('hidden');
+                    });
+                    
+                    // Initially hide all nested lists
+                    const ul = item.querySelector('ul');
+                    ul.classList.add('hidden');
+                }
+            });
+            
+            // Show first level by default
+            const firstLevelLists = document.querySelectorAll('.tree > ul > li > ul');
+            firstLevelLists.forEach(ul => {
+                ul.classList.remove('hidden');
+            });
+        });
+        
+        function toggleAll() {
+            const uls = document.querySelectorAll('.tree ul');
+            const isHidden = uls[0].classList.contains('hidden');
+            
+            uls.forEach(ul => {
+                if (isHidden) {
+                    ul.classList.remove('hidden');
+                } else {
+                    ul.classList.add('hidden');
+                }
+            });
+            
+            // Always show first level
+            const firstLevelLists = document.querySelectorAll('.tree > ul > li > ul');
+            firstLevelLists.forEach(ul => {
+                ul.classList.remove('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
